@@ -33,11 +33,7 @@ def print_spicy_foods(spicy_foods):
         print(f"{name} ({cuisine}) | Heat Level: {heat_level_emoji}")
 
 def get_spicy_food_by_cuisine(spicy_foods, cuisine):
-    spicy_food_by_cuisine = []
-    for food in spicy_foods:
-            if food['cuisine'] == cuisine:
-                spicy_food_by_cuisine.append(food)
-    return spicy_food_by_cuisine
+    return [food for food in spicy_foods if food['cuisine'] == cuisine]
 
 def print_spiciest_foods(spicy_foods):
     pass
