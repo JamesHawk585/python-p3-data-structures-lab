@@ -66,17 +66,14 @@ def get_average_heat_level(spicy_foods):
     heat_level = []
     # Creates for loop that loops through the spicy_foods list of dictionaries. 
     for food in spicy_foods:
-        # Each time the for loop iterates through the spicy_foods list of dictionaries, the 'heat_level' key is appended to the existing empty heat_level list. 
+        # Each time the for loop iterates through the sspicy_foods list of dictionaries, the 'heat_level' key is appended to the existing empty heat_level list. 
         heat_level.append(food['heat_level'])
     average = sum(heat_level) / len(heat_level)
     return average 
     
 
-print(spicy_foods)      
-print(spicy_food)
-
 def create_spicy_food(spicy_foods, spicy_food):
-    all_spicy_foods = spicy_foods + spicy_food
-    return all_spicy_foods
+    spicy_foods.append(spicy_food)
+    return spicy_foods
 
 
