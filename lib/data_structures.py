@@ -1,4 +1,4 @@
-import statistics
+
 
 spicy_foods = [
     {
@@ -51,12 +51,20 @@ def print_spiciest_foods(spicy_foods):
             heat_level_emoji = "🌶" * heat_level
             print(f"{name} ({cuisine}) | Heat Level: {heat_level_emoji}")
     
+ 
+
 
 def get_average_heat_level(spicy_foods):
+    # Creates and empty list
+    heat_level = []
+    # Creates for loop that loops through the spicy_foods list of dictionaries. 
     for food in spicy_foods:
-        heat_level = food['heat_level']
-        return statistics.mean(heat_level)
-        
+        # Each time the for loop iterates through the spicy_foods list of dictionaries, the 'heat_level' key is appended to the existing empty heat_level list. 
+        heat_level.append(food['heat_level'])
+    average = sum(heat_level) / len(heat_level)
+    return average 
+    
+
         
 
 
