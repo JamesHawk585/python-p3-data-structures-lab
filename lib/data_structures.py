@@ -1,3 +1,5 @@
+import statistics
+
 spicy_foods = [
     {
         "name": "Green Curry",
@@ -33,13 +35,30 @@ def print_spicy_foods(spicy_foods):
         print(f"{name} ({cuisine}) | Heat Level: {heat_level_emoji}")
 
 def get_spicy_food_by_cuisine(spicy_foods, cuisine):
-    return [food for food in spicy_foods if food['cuisine'] == cuisine]
+    for food in spicy_foods:
+        if food['cuisine'] == cuisine:
+            return food
+    return None
 
+
+    
 def print_spiciest_foods(spicy_foods):
-    pass
+    for food in spicy_foods:
+        if food['heat_level'] > 5:
+            name = food["name"]
+            cuisine = food["cuisine"]
+            heat_level = food['heat_level']
+            heat_level_emoji = "🌶" * heat_level
+            print(f"{name} ({cuisine}) | Heat Level: {heat_level_emoji}")
+    
 
 def get_average_heat_level(spicy_foods):
-    pass
+    for food in spicy_foods:
+        heat_level = food['heat_level']
+        return statistics.mean(heat_level)
+        
+        
+
 
 def create_spicy_food(spicy_foods, spicy_food):
     pass
